@@ -8,6 +8,7 @@ import {
 } from "@/components/ui/card"
 import { Checkbox } from "@/components/ui/checkbox"
 import { TaskItem } from "./task-item"
+import { TopicProgressIndicator } from "./topic-progress-indicator"
 
 export const TopicCard = () => {
   const tasks = [{
@@ -19,13 +20,14 @@ export const TopicCard = () => {
   }]
 
   return (
-    <Card>
+    <div>
       <CardHeader>
         <CardTitle>Work</CardTitle>
+        <TopicProgressIndicator />
       </CardHeader>
       <CardContent className="flex flex-col gap-2">
         {tasks.map((task) => <TaskItem key={task.id} task={task} />)}
       </CardContent>
-    </Card>
+    </div>
   )
 }
