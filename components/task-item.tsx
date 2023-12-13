@@ -17,7 +17,7 @@ export const TaskItem = (props: TaskItemProps) => {
       <Checkbox id={props.task.id} onClick={() => props.handleTaskChecked(props.task.id)} />
       <label
         htmlFor={props.task.id}
-        className="text-md peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+        className="text-md peer-disabled:cursor-not-allowed peer-disabled:opacity-70 select-none"
       >
         {props.task.description}
       </label>

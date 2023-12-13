@@ -23,6 +23,10 @@ export const TopicCard = () => {
     id: 'task-2',
     description: 'Approve the PR',
     complete: false
+  }, {
+    id: 'task-3',
+    description: 'Complete PowerPoint',
+    complete: false
   }]);
 
   const handleTaskChecked = (taskId: string) => {
@@ -44,7 +48,7 @@ export const TopicCard = () => {
       <CardHeader>
         <div className="flex gap-2 mb-1 items-center">
           <BriefcaseIcon />
-          <CardTitle>Work</CardTitle>
+          <CardTitle className="select-none">Work</CardTitle>
         </div>
         <TopicProgressIndicator tasks={tasks} />
       </CardHeader>
