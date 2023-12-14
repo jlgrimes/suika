@@ -51,7 +51,7 @@ export const TopicCard = () => {
       <div className="flex gap-4 items-center">
         <div className="flex gap-2 mb-1 items-center">
           <BriefcaseIcon />
-          <CardTitle className="select-none">Work</CardTitle>
+          <CardTitle>Work</CardTitle>
         </div>
         <TopicProgressIndicator tasks={tasks} />
       </div>

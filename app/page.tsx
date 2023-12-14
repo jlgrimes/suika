@@ -5,7 +5,7 @@ import { format } from "date-fns";
 
 export default function Home() {
   return (
-    <main className="flex flex-col p-24">
+    <main className="flex flex-col p-12 md:p-24 select-none">
       <h1 className="text-3xl font-bold mb-8">{format(new Date(), 'EEEE, LLL Mo')}</h1>
       <div className="flex flex-col gap-4">
         <TopicCard />
