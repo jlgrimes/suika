@@ -13,6 +13,7 @@ import { TaskItem } from "./task-item"
 import { TopicProgressIndicator } from "./topic-progress-indicator"
 import { BriefcaseIcon } from "lucide-react"
 import { useState } from "react"
+import { CompletedTasksAccordion } from "./completed-tasks-accordion"
 
 export const TopicCard = () => {
   const [tasks, setTasks] = useState([{
@@ -44,8 +45,8 @@ export const TopicCard = () => {
   }
 
   return (
-    <div>
-      <div className="flex flex-col gap-2 pb-4">
+    <div className="w-full md:w-1/2 xl:w-1/3">
+      <div className="flex gap-4 pb-4 items-center">
         <div className="flex gap-2 mb-1 items-center">
           <BriefcaseIcon />
           <CardTitle className="select-none">Work</CardTitle>
@@ -55,6 +56,7 @@ export const TopicCard = () => {
       <div className="flex flex-col gap-2">
         {tasks.map((task) => <TaskItem key={task.id} task={task} handleTaskChecked={handleTaskChecked} />)}
       </div>
+      <CompletedTasksAccordion />
     </div>
   )
 }
