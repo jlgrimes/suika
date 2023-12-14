@@ -10,15 +10,15 @@ import { CompletedTasksAccordion } from "./completed-tasks-accordion"
 export const TopicCard = () => {
   const [tasks, setTasks] = useState([{
     id: 'task-1',
-    description: 'Resolve the ticket',
+    name: 'Resolve the ticket',
     complete: false
   }, {
     id: 'task-2',
-    description: 'Approve the PR',
+    name: 'Approve the PR',
     complete: false
   }, {
     id: 'task-3',
-    description: 'Complete PowerPoint',
+    name: 'Complete PowerPoint',
     complete: false
   }]);
   const incompleteTasks = tasks.filter((task) => !task.complete);

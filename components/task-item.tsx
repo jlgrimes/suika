@@ -2,7 +2,7 @@ import { Checkbox } from "@/components/ui/checkbox"
 
 export interface TaskInterface {
   id: string;
-  description: string;
+  name: string;
   complete: boolean;
 }
 
@@ -19,7 +19,7 @@ export const TaskItem = (props: TaskItemProps) => {
         htmlFor={props.task.id}
         className="text-md peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
       >
-        {props.task.description}
+        {props.task.name}
       </label>
     </div>
   )
