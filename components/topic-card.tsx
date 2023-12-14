@@ -45,16 +45,16 @@ export const TopicCard = () => {
 
   return (
     <div>
-      <CardHeader>
+      <div className="flex flex-col gap-2 pb-4">
         <div className="flex gap-2 mb-1 items-center">
           <BriefcaseIcon />
           <CardTitle className="select-none">Work</CardTitle>
         </div>
         <TopicProgressIndicator tasks={tasks} />
-      </CardHeader>
-      <CardContent className="flex flex-col gap-2">
+      </div>
+      <div className="flex flex-col gap-2">
         {tasks.map((task) => <TaskItem key={task.id} task={task} handleTaskChecked={handleTaskChecked} />)}
-      </CardContent>
+      </div>
     </div>
   )
 }
