@@ -29,6 +29,8 @@ export const TopicCard = () => {
     description: 'Complete PowerPoint',
     complete: false
   }]);
+  const incompleteTasks = tasks.filter((task) => !task.complete);
+  const completedTasks = tasks.filter((task) => task.complete);
 
   const handleTaskChecked = (taskId: string) => {
     // TODO: This is going to be the logic to feed to backend
@@ -45,18 +47,20 @@ export const TopicCard = () => {
   }
 
   return (
-    <div className="w-full md:w-1/2 xl:w-1/3">
-      <div className="flex gap-4 pb-4 items-center">
+    <div className="w-full md:w-1/2 xl:w-1/3 flex flex-col gap-4">
+      <div className="flex gap-4 items-center">
         <div className="flex gap-2 mb-1 items-center">
           <BriefcaseIcon />
           <CardTitle className="select-none">Work</CardTitle>
         </div>
         <TopicProgressIndicator tasks={tasks} />
       </div>
-      <div className="flex flex-col gap-2">
-        {tasks.map((task) => <TaskItem key={task.id} task={task} handleTaskChecked={handleTaskChecked} />)}
-      </div>
-      <CompletedTasksAccordion />
+      {incompleteTasks.length > 0 && (
+        <div className="flex flex-col gap-2">
+          {incompleteTasks.map((task) => <TaskItem key={task.id} task={task} handleTaskChecked={handleTaskChecked} />)}
+        </div>
+      )}
+      {completedTasks.length > 0 && <CompletedTasksAccordion completedTasks={completedTasks} handleTaskChecked={handleTaskChecked} />}
     </div>
   )
 }

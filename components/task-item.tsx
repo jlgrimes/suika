@@ -14,7 +14,7 @@ interface TaskItemProps {
 export const TaskItem = (props: TaskItemProps) => {
   return (
     <div className="flex items-center space-x-2">
-      <Checkbox id={props.task.id} onClick={() => props.handleTaskChecked(props.task.id)} />
+      <Checkbox id={props.task.id} defaultChecked={props.task.complete} onClick={() => props.handleTaskChecked(props.task.id)} />
       <label
         htmlFor={props.task.id}
         className="text-md peer-disabled:cursor-not-allowed peer-disabled:opacity-70 select-none"
